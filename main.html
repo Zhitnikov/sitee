@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Моя таблица</title>
+    <meta charset="UTF-8">
+    <style>
+        #info-table td {
+            border: 0.3px solid gray;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<table id="info-table">
+    <thead>
+    <tr>
+        <th>№</th>
+        <th>Название</th>
+        <th>Материал</th>
+        <th>Длина</th>
+        <th>Ширина</th>
+        <th>Толщина</th>
+        <th>Фото</th>
+        <th>Стоимость</th>
+    </tr>
+    </thead>
+    <tbody id="table-body">
+    </tbody>
+</table>
+
+<script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+<script>
+    // Функция для чтения файла .xlsx и добавления данных в таблицу
+    function readExcelFile() {
+        var file = "catalog.xlsx";
+        var req = new XMLHttpRequest();
+        req.open("GET", file, true);
+        req.responseType = "arraybuffer";
+
+        req.onload = function(e) {
+            var data = new Uint8Array(req.response);
+            var workbook = XLSX.read(data, { type: 'array' });
+            var worksheet = workbook.Sheets[workbook.SheetNames[0]];
+            var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+
+            // Проход по строкам данных и добавление их в таблицу
+            for (var i = 1; i < jsonData.length; i++) {
+                addTableRow(jsonData[i]);
+            }
+        };
+
+        req.send();
+    }
+
+    // Функция для добавления новой строки в таблицу
+    function addTableRow(data) {
+        var tableBody = document.getElementById("table-body");
+        var newRow = document.createElement("tr");
+
+        // Создание ячеек и заполнение их данными
+        for (var i = 0; i < data.length; i++) {
+            var cell = document.createElement("td");
+
+            // Если это столбец с фото, создаем элемент <img> и устанавливаем атрибут src
+            if (i === 6) {
+                var img = document.createElement("img");
+                img.src = data[i];
+                img.onload = function() {
+                    var width = this.width;
+                    var height = this.height;
+                    var maxWidth = 150; // Максимальная ширина изображения
+                    var maxHeight = (maxWidth / width) * height; // Вычисление высоты в соответствии с шириной
+                    this.style.maxWidth = maxWidth + "px";
+                    this.style.height = maxHeight + "px";
+                };
+                cell.appendChild(img);
+            } else {
+                cell.textContent = data[i];
+            }
+
+            newRow.appendChild(cell);
+        }
+
+        // Добавление новой строки в таблицу
+        tableBody.appendChild(newRow);
+    }
+
+    // Вызов функции для чтения файла и добавления данных в таблицу
+    readExcelFile();
+</script>
+</body>
+</html>
