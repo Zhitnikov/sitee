@@ -37,8 +37,27 @@
             color: #ff8700; /* цвет ссылок при наведении */
         }
 
-        a:hover {
-            color: #000000; /* цвет ссылок при наведении */
+        .nav-2 ul li a {
+            position: relative;
+            display: inline-block;
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .nav-2 ul li a:hover::before {
+            content: "";
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border: 2px solid #333;
+        }
+
+        .nav-2 ul li a:hover {
+            background-color: #333;
+            color: #fff;
         }
 
         html body{
@@ -52,10 +71,32 @@
             font-weight: 400;
         }
 
-        header {
+        .nav-2 {
+            position: relative; /* добавляем позиционирование для дочерних элементов */
             background: linear-gradient(to bottom, #e5d8c1, #6a4e37);
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
             margin: 0;
+            overflow: hidden; /* скрываем часть псевдоэлементов, выходящих за границы родительского элемента */
+        }
+
+        .nav-2::before,
+        .nav-2::after{
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 2px; /* задаем ширину полосы */
+            background-color: #3c2f21; /* задаем цвет полосы */
+        }
+
+        .nav-2::before {
+            left: 0; /* полоса слева */
+            top: 0;
+        }
+
+        .nav-2::after {
+            right: 0; /* полоса справа */
+            bottom: 0;
         }
 
         .nav-2 {
@@ -199,8 +240,11 @@
             <div class="col-md-3">
                 <h4>Контакты</h4>
                 <ul>
-                    <li>Телефон: +7 (XXX) XXX-XX-XX</li>
-                    <li>Email: info@example.com</li>
+                    <li>Телефон: <a href="tel:+79990000000">+7 (999) 000-00-00</a></li>
+                    <li>Email: <a href="mailto:site.gmail.com">site.gmail.com</a></li>
+                    <li>Telegram: <a href="https://t.me/telegramchat">Telegram чат</a></li>
+                    <li>VK: <a href="#">Вконтакте</a></li>
+                    <li>Instagram: <a href="#">Instagram</a></li>
                     <li>Адрес: г. Москва, ул. Название улицы, д. 1, офис 101</li>
                 </ul>
             </div>
@@ -255,6 +299,7 @@
 
     footer a {
         color: #333; /* цвет ссылок */
+        font-weight: bold;
         text-decoration: none; /* убираем подчеркивание */
     }
 
