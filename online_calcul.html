@@ -23,7 +23,7 @@
         <nav class="nav-2">
             <ul>
                 <li><a href="main.html">Главная</a></li>
-                <li onmouseenter="handleMouseEnter()" onmouseleave="handleMouseLeave()"><a href="#" onclick="toggleMenu()">Продукция</a>
+                <li><a href="#" onclick="toggleMenu()">Продукция</a>
                     <ul id="submenu">
                         <li><a href="#">Столешницы</a></li>
                         <li><a href="#">Подоконники</a></li>
@@ -36,28 +36,17 @@
                 <li><a href="#">Материалы</a></li>
                 <li><a href="#">Наши продукты</a></li>
                 <li><a href="contacts.html">Контакты</a></li>
-                <li><a href="#">О компании</a></li>
+                <li><a href="about-company.html">О компании</a></li>
             </ul>
         </nav>
     </header>
 
     <script>
-        function handleMouseEnter() {
-            // Ваш код для активации скрипта при наведении мышки
-            toggleMenu();
-        }
-
-        function handleMouseLeave() {
-            // Ваш код для деактивации скрипта при уходе мышки
-            toggleMenu();
-        }
-
         function toggleMenu() {
             var submenu = document.getElementById("submenu");
             submenu.classList.toggle("show");
         }
     </script>
-
 
     <style>
         #submenu {
@@ -269,6 +258,7 @@
 <body>
 
 
+
 </body>
 
 <footer>
@@ -352,10 +342,6 @@
         margin-bottom: 10px; /* отступ снизу между элементами списка */
     }
 
-    .down-mains-li a:hover {
-        color: #ff8c00; /* цвет ссылок при наведении */
-    }
-
     footer a {
         color: #333; /* цвет ссылок */
         font-weight: bold;
@@ -363,6 +349,10 @@
     }
 
     footer a:hover {
+        color: #ff8c00; /* цвет ссылок при наведении */
+    }
+
+    .down-mains-li a:hover {
         color: #ff8c00; /* цвет ссылок при наведении */
     }
 
@@ -386,5 +376,3 @@
         text-align: center; /* выравнивание по центру */
     }
 </style>
-
-</html>
