@@ -8,7 +8,25 @@
             <img src="path/to/image.jpg" alt="Картинка">
             <nav class="nav-1-1">
                 <ul>
-                    <li class="li2"><a href="page1.html">Заказать рассчет</a></li>
+                    <li class="li2"><a href="#" onclick="openModal()">Заказать рассчет</a></li>
+
+                    <div id="modal" class="modal">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeModal()">&times;</span>
+                            <h2>Заказать рассчет</h2>
+                            <form>
+                                <label for="name">Имя:</label>
+                                <input type="text" id="name" name="name" required>
+                                <label for="phone">Телефон:</label>
+                                <input type="tel" id="phone" name="phone" required>
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="email" required>
+                                <label for="note">Примечание:</label>
+                                <textarea id="note" name="note"></textarea>
+                                <button type="submit">Отправить</button>
+                            </form>
+                        </div>
+                    </div>
                     <li class="li2"><a href="online_calcul.html">Онлайн рассчет</a></li>
                     <li class="li2"><a href="page3.html">Ссылка 3</a></li>
                 </ul>
@@ -20,11 +38,12 @@
             </div>
             <br>
         </nav>
+
         <nav class="nav-2">
             <ul>
                 <li><a href="main.html">Главная</a></li>
-                <li><a href="#" onclick="toggleMenu()">Продукция</a>
-                    <ul id="submenu">
+                <li><a href="#">Продукция</a>
+                    <ul class="submenu">
                         <li><a href="#">Столешницы</a></li>
                         <li><a href="#">Подоконники</a></li>
                         <li><a href="#">Ступени</a></li>
@@ -33,46 +52,99 @@
                         <li><a href="#">Облицовка<br> фасадов</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Материалы</a></li>
-                <li><a href="#">Наши продукты</a></li>
+                <li><a href="#">Материалы</a>
+                    <ul class="submenu">
+                        <li><a href="#">Столешницы</a></li>
+                        <li><a href="#">Подоконники</a></li>
+                        <li><a href="#">Ступени</a></li>
+                        <li><a href="#">Камины</a></li>
+                        <li><a href="#">Облицовка стен</a></li>
+                        <li><a href="#">Облицовка<br> фасадов</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Стоимость</a>
+                    <ul class="submenu">
+                        <li><a href="#">Столешницы</a></li>
+                        <li><a href="#">Подоконники</a></li>
+                        <li><a href="#">Ступени</a></li>
+                        <li><a href="#">Камины</a></li>
+                        <li><a href="#">Облицовка стен</a></li>
+                        <li><a href="#">Облицовка<br> фасадов</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Наши продукты</a>
+                    <ul class="submenu">
+                        <li><a href="#">Столешницы</a></li>
+                        <li><a href="#">Подоконники</a></li>
+                        <li><a href="#">Ступени</a></li>
+                        <li><a href="#">Камины</a></li>
+                        <li><a href="#">Облицовка стен</a></li>
+                        <li><a href="#">Облицовка<br> фасадов</a></li>
+                    </ul>
+                </li>
                 <li><a href="contacts.html">Контакты</a></li>
                 <li><a href="about-company.html">О компании</a></li>
             </ul>
         </nav>
+
     </header>
 
-    <script>
-        function toggleMenu() {
-            var submenu = document.getElementById("submenu");
-            submenu.classList.toggle("show");
-        }
-    </script>
-
     <style>
-        #submenu {
-            display: none;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out, max-height 0.3s ease-in-out;
-            max-height: 0;
-            overflow: hidden;
+
+        .nav-2 {
+            position: relative;
+            background: linear-gradient(to bottom, #e5d8c1, #6a4e37);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            margin: 0;
         }
 
-        #submenu.show {
-            display: block;
-            opacity: 1;
-            max-height: 200px; /* Задайте максимальную высоту подменю */
+        .nav-2::before,
+        .nav-2::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background-color: #3c2f21;
         }
 
-        #submenu li {
-            font-size: 10px;
+        .nav-2::before {
+            left: 0;
+            top: 0;
         }
 
-        .li2 a:hover {
-            color: #ff8700; /* цвет ссылок при наведении */
+        .nav-2::after {
+            right: 0;
+            bottom: 0;
+        }
+
+        .nav-2 {
+            display: flex;
+            justify-content: center;
         }
 
         .nav-2 li {
-            margin-left: auto;
+            position: relative;
+            margin: auto;
+        }
+
+        .submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            width: 100%;
+            background: linear-gradient(to bottom, #e5d8c1, #836452FF);
+            border: 1px solid #ccc;
+            text-align: center;
+            padding-bottom: 5px;
+        }
+
+        .nav-2 li:hover .submenu {
+            display: block;
+        }
+
+        .submenu li {
+            font-size: 12px;
         }
 
         .nav-2 ul li a {
@@ -89,12 +161,16 @@
             left: -5px;
             right: -5px;
             bottom: -5px;
-            border: 2px solid #333;
+            border: 1px solid #333;
         }
 
         .nav-2 ul li a:hover {
             background-color: #333;
             color: #fff;
+        }
+
+        .li2 a:hover {
+            color: #ff8700; /* цвет ссылок при наведении */
         }
 
         .down-mains { /* разделы снизу */
@@ -117,39 +193,6 @@
             vertical-align: baseline;
             background: transparent;
             font-weight: 400;
-        }
-
-        .nav-2 {
-            position: relative; /* добавляем позиционирование для дочерних элементов */
-            background: linear-gradient(to bottom, #e5d8c1, #6a4e37);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            margin: 0;
-            overflow: hidden; /* скрываем часть псевдоэлементов, выходящих за границы родительского элемента */
-        }
-
-        .nav-2::before,
-        .nav-2::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 2px; /* задаем ширину полосы */
-            background-color: #3c2f21; /* задаем цвет полосы */
-        }
-
-        .nav-2::before {
-            left: 0; /* полоса слева */
-            top: 0;
-        }
-
-        .nav-2::after {
-            right: 0; /* полоса справа */
-            bottom: 0;
-        }
-
-        .nav-2 {
-            display: flex;
-            justify-content: center;
         }
 
         .nav-1 {

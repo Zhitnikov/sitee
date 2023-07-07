@@ -8,8 +8,26 @@
             <img src="path/to/image.jpg" alt="Картинка">
             <nav class="nav-1-1">
                 <ul>
-                    <li class="li2"><a href="page1.html">Ссылка 1</a></li>
-                    <li class="li2"><a href="page2.html">Ссылка 2</a></li>
+                    <li class="li2"><a href="#" onclick="openModal()">Заказать рассчет</a></li>
+
+                    <div id="modal" class="modal">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeModal()">&times;</span>
+                            <h2>Заказать рассчет</h2>
+                            <form>
+                                <label for="name">Имя:</label>
+                                <input type="text" id="name" name="name" required>
+                                <label for="phone">Телефон:</label>
+                                <input type="tel" id="phone" name="phone" required>
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="email" required>
+                                <label for="note">Примечание:</label>
+                                <textarea id="note" name="note"></textarea>
+                                <button type="submit">Отправить</button>
+                            </form>
+                        </div>
+                    </div>
+                    <li class="li2"><a href="online_calcul.html">Онлайн рассчет</a></li>
                     <li class="li2"><a href="page3.html">Ссылка 3</a></li>
                 </ul>
             </nav>
@@ -20,6 +38,7 @@
             </div>
             <br>
         </nav>
+
         <nav class="nav-2">
             <ul>
                 <li><a href="main.html">Главная</a></li>
@@ -64,12 +83,14 @@
                     </ul>
                 </li>
                 <li><a href="contacts.html">Контакты</a></li>
-                <li><a href="#">О компании</a></li>
+                <li><a href="about-company.html">О компании</a></li>
             </ul>
         </nav>
+
     </header>
 
     <style>
+
         .nav-2 {
             position: relative;
             background: linear-gradient(to bottom, #e5d8c1, #6a4e37);
@@ -104,17 +125,18 @@
 
         .nav-2 li {
             position: relative;
+            margin: auto;
         }
 
         .submenu {
             display: none;
             position: absolute;
             top: 100%;
-            left: -5px;
             width: 100%;
             background: linear-gradient(to bottom, #e5d8c1, #836452FF);
-            padding: 10px;
             border: 1px solid #ccc;
+            text-align: center;
+            padding-bottom: 5px;
         }
 
         .nav-2 li:hover .submenu {
@@ -139,7 +161,7 @@
             left: -5px;
             right: -5px;
             bottom: -5px;
-            border: 2px solid #333;
+            border: 1px solid #333;
         }
 
         .nav-2 ul li a:hover {
@@ -147,14 +169,8 @@
             color: #fff;
         }
 
-
-        nav li:hover ul {
-            display: block;
-        }
-
-        nav li ul li {
-            display: block;
-            margin-top: 10px;
+        .li2 a:hover {
+            color: #ff8700; /* цвет ссылок при наведении */
         }
 
         .down-mains { /* разделы снизу */
@@ -189,6 +205,17 @@
             position: absolute;
             top: 0;
             left: 0;
+        }
+
+        .li2 {
+            margin: 0 10px;
+        }
+
+        .li2 a {
+            color: #4c2f27;
+            font-weight: bold;
+            text-decoration: none;
+            text-transform: uppercase;
         }
 
         .div-1 a {
@@ -268,26 +295,10 @@
             max-width: 100%;
             max-height: 100%;
         }
-
-        .li2 {
-            margin: 0 10px;
-        }
-
-        .li2 a {
-            color: #4c2f27;
-            font-weight: bold;
-            text-decoration: none;
-            text-transform: uppercase;
-        }
-
-        .li2 a:hover {
-            color: #ff8700;
-        }
     </style>
 </head>
 
 <body>
-
 
 </body>
 
