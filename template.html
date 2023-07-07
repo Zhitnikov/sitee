@@ -23,17 +23,62 @@
         <nav class="nav-2">
             <ul>
                 <li><a href="main.html">Главная</a></li>
-                <li><a href="#">Продукция</a></li>
+                <li onmouseenter="handleMouseEnter()" onmouseleave="handleMouseLeave()"><a href="#" onclick="toggleMenu()">Продукция</a>
+                    <ul id="submenu">
+                        <li><a href="#">Столешницы</a></li>
+                        <li><a href="#">Подоконники</a></li>
+                        <li><a href="#">Ступени</a></li>
+                        <li><a href="#">Камины</a></li>
+                        <li><a href="#">Облицовка стен</a></li>
+                        <li><a href="#">Облицовка<br> фасадов</a></li>
+                    </ul>
+                </li>
                 <li><a href="#">Материалы</a></li>
                 <li><a href="#">Стоимость</a></li>
                 <li><a href="#">Наши продукты</a></li>
                 <li><a href="contacts.html">Контакты</a></li>
-                <li><a href="about-company.html">О компании</a></li>
+                <li><a href="#">О компании</a></li>
             </ul>
         </nav>
     </header>
 
+    <script>
+        function handleMouseEnter() {
+            // Ваш код для активации скрипта при наведении мышки
+            toggleMenu();
+        }
+
+        function handleMouseLeave() {
+            // Ваш код для деактивации скрипта при уходе мышки
+            toggleMenu();
+        }
+
+        function toggleMenu() {
+            var submenu = document.getElementById("submenu");
+            submenu.classList.toggle("show");
+        }
+    </script>
+
+
     <style>
+        #submenu {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out, max-height 0.3s ease-in-out;
+            max-height: 0;
+            overflow: hidden;
+        }
+
+        #submenu.show {
+            display: block;
+            opacity: 1;
+            max-height: 200px; /* Задайте максимальную высоту подменю */
+        }
+
+        #submenu li {
+            font-size: 10px;
+        }
+
         .li2 a:hover {
             color: #ff8700; /* цвет ссылок при наведении */
         }
