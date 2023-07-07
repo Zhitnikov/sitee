@@ -8,18 +8,18 @@
             <img src="path/to/image.jpg" alt="Картинка">
             <nav class = "nav-1-1">
                 <ul>
-                    <li><a href="page1.html">Ссылка 1</a></li>
-                    <li><a href="page2.html">Ссылка 2</a></li>
-                    <li><a href="page3.html">Ссылка 3</a></li>
+                    <li class="li2"><a href="page1.html">Ссылка 1</a></li>
+                    <li class="li2"><a href="page2.html">Ссылка 2</a></li>
+                    <li class="li2"><a href="page3.html">Ссылка 3</a></li>
                 </ul>
             </nav>
-            <div>
+            <div class="div-1">
                 <a href="tel:+79990000000">+7 (999) 000-00-00</a>
                 <a href="https://t.me/telegramchat">Telegram чат</a>
                 <a href="mailto:site.gmail.com">site.gmail.com</a>
             </div>
+            <br>
         </nav>
-        <br>
         <nav class = "nav-2">
             <ul>
                 <li><a href="#">Главная</a></li>
@@ -33,7 +33,6 @@
     </header>
 
     <style>
-
         html body{
             margin: 0;
             padding: 0;
@@ -58,12 +57,32 @@
 
         .nav-1 {
             position: relative;
+            background-color: #fff; /* цвет фона - белый */
+            color: #4c2f27; /* цвет текста - темно-коричневый */
         }
 
         .nav-1 img {
             position: absolute;
             top: 0;
             left: 0;
+        }
+
+        .li2 {
+            margin: 0 10px;
+        }
+
+        .li2 a {
+            color: #4c2f27;
+            font-weight: bold;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .div-1 a {
+            color: #4c2f27;
+            font-weight: bold;
+            text-decoration: none;
+            text-transform: uppercase;
         }
 
         .nav-1 div {
@@ -138,6 +157,7 @@
         }
     </style>
 </head>
+
 <body>
 <table id="info-table">
     <thead>
@@ -155,6 +175,105 @@
     <tbody id="table-body">
     </tbody>
 </table>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <h4>Разделы сайта</h4>
+                <ul>
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#">О нас</a></li>
+                    <li><a href="#">Услуги</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h4>Контакты</h4>
+                <ul>
+                    <li>Телефон: +7 (XXX) XXX-XX-XX</li>
+                    <li>Email: info@example.com</li>
+                    <li>Адрес: г. Москва, ул. Название улицы, д. 1, офис 101</li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h4>Принимаем к оплате</h4>
+                <ul>
+                    <li><img src="visa.png" alt="Visa"></li>
+                    <li><img src="mastercard.png" alt="Mastercard"></li>
+                    <li><img src="maestro.png" alt="Maestro"></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h4>Мы в социальных сетях</h4>
+                <ul class="social-media">
+                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fab fa-vk"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p class="small">&copy; 2023 Название вашей компании. Все права защищены.</p>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+<style>
+    footer {
+        background-color: #f0f0f0; /* цвет фона */
+        padding: 40px 0; /* отступы сверху и снизу */
+    }
+
+    footer h4 {
+        color: #333; /* цвет заголовков */
+        font-weight: bold; /* жирный шрифт */
+        margin-bottom: 20px; /* отступ снизу */
+        text-align: center; /* выравнивание по центру */
+    }
+
+    footer ul {
+        list-style: none; /* убираем маркеры списка */
+        margin: 0;
+        padding: 0;
+    }
+
+    footer li {
+        margin-bottom: 10px; /* отступ снизу между элементами списка */
+    }
+
+    footer a {
+        color: #333; /* цвет ссылок */
+        text-decoration: none; /* убираем подчеркивание */
+    }
+
+    footer a:hover {
+        color: #ff8c00; /* цвет ссылок при наведении */
+    }
+
+    footer ul.social-media li {
+        display: inline-block; /* располагаем элементы списка в одной строке */
+        margin-right: 10px; /* отступ справа между элементами списка */
+    }
+
+    footer ul.social-media li:last-child {
+        margin-right: 0; /* убираем отступ справа у последнего элемента списка */
+    }
+
+    footer ul.social-media li a {
+        color: #333; /* цвет ссылок */
+        font-size: 24px; /* размер иконок */
+    }
+
+    footer p.small {
+        font-size: 12px; /* размер текста */
+        margin-top: 20px; /* отступ сверху */
+        text-align: center; /* выравнивание по центру */
+    }
+</style>
 
 <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
 <script>
