@@ -3,9 +3,24 @@
 <head>
     <title>Моя таблица</title>
     <meta charset="UTF-8">
-
     <header>
-        <nav>
+        <nav class = "nav-1">
+            <img src="path/to/image.jpg" alt="Картинка">
+            <nav class = "nav-1-1">
+                <ul>
+                    <li><a href="page1.html">Ссылка 1</a></li>
+                    <li><a href="page2.html">Ссылка 2</a></li>
+                    <li><a href="page3.html">Ссылка 3</a></li>
+                </ul>
+            </nav>
+            <div>
+                <a href="tel:+79990000000">+7 (999) 000-00-00</a>
+                <a href="https://t.me/telegramchat">Telegram чат</a>
+                <a href="mailto:site.gmail.com">site.gmail.com</a>
+            </div>
+        </nav>
+        <br>
+        <nav class = "nav-2">
             <ul>
                 <li><a href="#">Главная</a></li>
                 <li><a href="#">О нас</a></li>
@@ -36,7 +51,33 @@
             margin: 0;
         }
 
-        nav {
+        .nav-2 {
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-1 {
+            position: relative;
+        }
+
+        .nav-1 img {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .nav-1 div {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .nav-1 div a {
+            font-size: 12px;
+            margin-left: 10px;
+        }
+
+        .nav-1-1 {
             display: flex;
             justify-content: center;
         }
