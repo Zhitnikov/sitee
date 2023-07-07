@@ -9,7 +9,7 @@
             <nav class="nav-1-1">
                 <ul>
                     <li class="li2"><a href="page1.html">Заказать рассчет</a></li>
-                    <li class="li2"><a href="page2.html">Ссылка 2</a></li>
+                    <li class="li2"><a href="online_calcul.html">Онлайн рассчет</a></li>
                     <li class="li2"><a href="page3.html">Ссылка 3</a></li>
                 </ul>
             </nav>
@@ -23,7 +23,16 @@
         <nav class="nav-2">
             <ul>
                 <li><a href="main.html">Главная</a></li>
-                <li><a href="#">Продукция</a></li>
+                <li><a href="#" onclick="toggleMenu()">Продукция</a>
+                    <ul id="submenu">
+                        <li><a href="#">Столешницы</a></li>
+                        <li><a href="#">Подоконники</a></li>
+                        <li><a href="#">Ступени</a></li>
+                        <li><a href="#">Камины</a></li>
+                        <li><a href="#">Облицовка стен</a></li>
+                        <li><a href="#">Облицовка<br> фасадов</a></li>
+                    </ul>
+                </li>
                 <li><a href="#">Материалы</a></li>
                 <li><a href="#">Наши продукты</a></li>
                 <li><a href="contacts.html">Контакты</a></li>
@@ -32,7 +41,32 @@
         </nav>
     </header>
 
+    <script>
+        function toggleMenu() {
+            var submenu = document.getElementById("submenu");
+            submenu.classList.toggle("show");
+        }
+    </script>
+
     <style>
+        #submenu {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out, max-height 0.3s ease-in-out;
+            max-height: 0;
+            overflow: hidden;
+        }
+
+        #submenu.show {
+            display: block;
+            opacity: 1;
+            max-height: 200px; /* Задайте максимальную высоту подменю */
+        }
+
+        #submenu li {
+            font-size: 10px;
+        }
+
         .li2 a:hover {
             color: #ff8700; /* цвет ссылок при наведении */
         }
@@ -221,11 +255,133 @@
     </style>
 </head>
 
-<body>
+<body class = body-1>
+<br>
+    <h2 class="first-string">РАССЧИТАТЬ СТОИМОСТЬ СТОЛЕШНИЦЫ ИЗ КВАРЦЕВОГО КАМНЯ</h2>
+<br>
+
+    <p class="string-about">Предлагаем Вам рассчитать стоимость столешницы
+        из кварцевого камня на нашем онлайн калькуляторе. Поэкспериментируйте с
+        выбором материала и размерами столешницы, чтобы заранее спланировать бюджет
+        на наиболее подходящий по стоимости декор для будущей столешницы. Обращаем внимание,
+        что калькулятор рассчитывает конечную стоимость изделия «под ключ», т.е. с замером,
+        доставкой и монтажом в черте СПб.</p>
+<div class="center">
+    <h3 class="string-select">Выберите материал для расчета:</h3>
+    <br>
+    <div class="radio-buttons">
+        <input type="radio" id="material1" name="material" value="material1">
+        <label for="material1">Камень 1</label>
+        <input type="radio" id="material2" name="material" value="material2">
+        <label for="material2">Камень 2</label>
+        <input type="radio" id="material3" name="material" value="material3">
+        <label for="material3">Камень 3</label>
+    </div>
+    <br>
+    <h3 class="string-select">Выберите форму и толщину столешницы:</h3>
+    <br>
+    <p class="form">Форма: Толщина:</p>
+    <br>
+    <div class = "str">
+
+    <div class="buttons-container-form">
+        <div class="radio-button">
+            <input type="radio" id="size1" name="size" value="size1">
+            <label for="size1">П - образная</label>
+        </div>
+        <div class="radio-button">
+            <input type="radio" id="size2" name="size" value="size2">
+            <label for="size2">Г - образная</label>
+        </div>
+        <div class="radio-button">
+            <input type="radio" id="size3" name="size" value="size3">
+            <label for="size3">Прямая столешница</label>
+        </div>
+    </div>
 
 
+    <div class="buttons-container-tolsh">
+        <div class="radio-button">
+            <input type="radio" id="size4" name="size" value="size4">
+            <label for="size4">2 см</label>
+        </div>
+        <div class="radio-button">
+            <input type="radio" id="size5" name="size" value="size5">
+            <label for="size5">4см</label>
+        </div>
+    </div>
+    </div>
+    <br>
+    <h3 class="string-length">РАССЧИТАТЬ СТОИМОСТЬ СТОЛЕШНИЦЫ ИЗ КВАРЦЕВОГО КАМНЯ</h3>
+    <br>
 
+    <p class="string-about">Предлагаем Вам рассчитать стоимость столешницы
+        из кварцевого камня на нашем онлайн калькуляторе. Поэкспериментируйте с
+        выбором материала и размерами столешницы, чтобы заранее спланировать бюджет
+        на наиболее подходящий по стоимости декор для будущей столешницы. Обращаем внимание,
+        что калькулятор рассчитывает конечную стоимость изделия «под ключ», т.е. с замером,
+        доставкой и монтажом в черте СПб.</p>
+
+</div>
 </body>
+
+<style>
+    .str {
+        display: flex;
+    }
+    .form {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        word-spacing: 200px;
+    }
+
+    .buttons-container-form {
+        display: flex;
+        flex-direction: column;
+        margin-left: -50px;
+    }
+
+    .body-1 .first-string {
+        max-width: 80%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .body-1 .string-about {
+        max-width: 80%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .body-1 .center .string-select {
+        max-width: 80%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .center {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .buttons-container-tolsh {
+        display: flex;
+        flex-direction: column;
+        margin-left: 200px;
+    }
+
+    .radio-button {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .radio-button input[type="radio"] {
+        margin-right: 10px;
+    }
+
+</style>
+
 
 <footer>
     <div class="container">
@@ -308,10 +464,6 @@
         margin-bottom: 10px; /* отступ снизу между элементами списка */
     }
 
-    .down-mains-li a:hover {
-        color: #ff8c00; /* цвет ссылок при наведении */
-    }
-
     footer a {
         color: #333; /* цвет ссылок */
         font-weight: bold;
@@ -319,6 +471,10 @@
     }
 
     footer a:hover {
+        color: #ff8c00; /* цвет ссылок при наведении */
+    }
+
+    .down-mains-li a:hover {
         color: #ff8c00; /* цвет ссылок при наведении */
     }
 
@@ -342,5 +498,3 @@
         text-align: center; /* выравнивание по центру */
     }
 </style>
-
-</html>
