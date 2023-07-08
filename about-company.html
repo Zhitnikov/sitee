@@ -9,24 +9,6 @@
             <nav class="nav-1-1">
                 <ul>
                     <li class="li2"><a href="#" onclick="openModal()">Заказать рассчет</a></li>
-
-                    <div id="modal" class="modal">
-                        <div class="modal-content">
-                            <span class="close" onclick="closeModal()">&times;</span>
-                            <h2>Заказать рассчет</h2>
-                            <form>
-                                <label for="name">Имя:</label>
-                                <input type="text" id="name" name="name" required>
-                                <label for="phone">Телефон:</label>
-                                <input type="tel" id="phone" name="phone" required>
-                                <label for="email">Email:</label>
-                                <input type="email" id="email" name="email" required>
-                                <label for="note">Примечание:</label>
-                                <textarea id="note" name="note"></textarea>
-                                <button type="submit">Отправить</button>
-                            </form>
-                        </div>
-                    </div>
                     <li class="li2"><a href="online_calcul.html">Онлайн рассчет</a></li>
                     <li class="li2"><a href="page3.html">Ссылка 3</a></li>
                 </ul>
@@ -54,39 +36,19 @@
                 </li>
                 <li><a href="#">Материалы</a>
                     <ul class="submenu">
-                        <li><a href="#">Столешницы</a></li>
-                        <li><a href="#">Подоконники</a></li>
-                        <li><a href="#">Ступени</a></li>
-                        <li><a href="#">Камины</a></li>
-                        <li><a href="#">Облицовка стен</a></li>
-                        <li><a href="#">Облицовка<br> фасадов</a></li>
+                        <li><a href="#">Кварцевый агломерат</a></li>
+                        <li><a href="#">Кварцит</a></li>
+                        <li><a href="#">Гранит</a></li>
+                        <li><a href="#">Мрамор</a></li>
+                        <li><a href="#">Оникс</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Стоимость</a>
-                    <ul class="submenu">
-                        <li><a href="#">Столешницы</a></li>
-                        <li><a href="#">Подоконники</a></li>
-                        <li><a href="#">Ступени</a></li>
-                        <li><a href="#">Камины</a></li>
-                        <li><a href="#">Облицовка стен</a></li>
-                        <li><a href="#">Облицовка<br> фасадов</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Наши продукты</a>
-                    <ul class="submenu">
-                        <li><a href="#">Столешницы</a></li>
-                        <li><a href="#">Подоконники</a></li>
-                        <li><a href="#">Ступени</a></li>
-                        <li><a href="#">Камины</a></li>
-                        <li><a href="#">Облицовка стен</a></li>
-                        <li><a href="#">Облицовка<br> фасадов</a></li>
-                    </ul>
+                <li><a href="our_products.html">Наши продукты</a>
                 </li>
                 <li><a href="contacts.html">Контакты</a></li>
                 <li><a href="about-company.html">О компании</a></li>
             </ul>
         </nav>
-
     </header>
 
     <style>
@@ -299,10 +261,93 @@
 </head>
 
 <body>
-
-
+  <h2 class="f_text">О КОМПАНИИ</h2>
+  <p class="about_f_text">Здесь Вы можете выбрать материал для изготовления
+      кухонной столешницы, подоконника, камина и других изделий из камня и
+      заказать его обработку на современном оборудовании нашей производственной
+      площадки. Ведь от качества и профессионализма обработки камня зависит
+      степень привлекательности изделия, касающейся как его эксплуатационных
+      свойств, так и внешнего вида (эстетики).
+      <br>
+      <br>
+      Наше камнеобрабатывающее предприятие занимается реализацией в розницу
+      и оптом кварцевого агломерата и различных видов натурального камня в
+      Санкт-Петербурге непосредственно со складов поставщиков либо под заказ.
+      Просто выберите понравившийся Вам материал в каталоге компании, и мы
+      поможем Вам в его обработке и монтаже.</p>
+  <div class="usligi_etapy_preimuchestva" style="display: flex;">
+      <div class="container" style="flex: 1; margin: 0;">
+          <h2 class="title">Оказываемые услуги</h2>
+          <ul class="list">
+              <li>1. Первый пункт</li>
+              <li>2. Второй пункт</li>
+              <li>3. Третий пункт</li>
+              <li>4. Четвертый пункт</li>
+              <li>5. Пятый пункт</li>
+          </ul>
+      </div>
+      <div class="container2" style="flex: 1; margin: 0;">
+          <h2 class="title2">Этапы работы с нами</h2>
+          <ul class="list2">
+              <li>1. Первый пункт</li>
+              <li>2. Второй пункт</li>
+              <li>3. Третий пункт</li>
+              <li>4. Четвертый пункт</li>
+              <li>5. Пятый пункт</li>
+          </ul>
+      </div>
+  </div>
 
 </body>
+
+<style>
+    .container {
+        width: 80%;
+        margin-right: 100px;
+        text-align: center;
+    }
+    .container2 {
+        width: 80%;
+        margin-left: 100px;
+        text-align: center;
+    }
+
+    .title, .title2 {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .list, .list2 {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        font-size: 18px;
+        line-height: 1.5;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .list li {
+        margin-bottom: 10px;
+    }
+
+    .list2 li {
+        margin-bottom: 10px;
+    }
+
+    .f_text {
+        display: block;
+        margin-right: 0;
+        text-align: center;
+    }
+
+    .about_f_text {
+        max-width: 80%;
+        margin: 0 auto;
+        text-align: center;
+    }
+</style>
 
 <footer>
     <div class="container">
@@ -322,8 +367,10 @@
                 <h4>Контакты</h4>
                 <ul>
                     <div class="down-mains">
-                        <li class="down-mains-li">Телефон: <a href="tel:+79990000000">+7 (999) 000-00-00</a></li>
-                        <li class="down-mains-li">Email: <a href="mailto:site.gmail.com">site.gmail.com</a></li>
+                        <li class="down-mains-li">Телефон:
+                            <a href="tel:+79990000000">+7 (999) 000-00-00</a></li>
+                        <li class="down-mains-li">Email:
+                            <a href="mailto:site.gmail.com">site.gmail.com</a></li>
                     </div>
                 </ul>
                 <ul>
@@ -338,7 +385,7 @@
                     <div class="down-mains">
                         <li><img src="visa.png" alt="Visa"></li>
                         <li><img src="mastercard.png" alt="Mastercard"></li>
-                        <li><img src="maestro.png" alt="Maestro"></li>
+                        <li><img src="mir.png" alt="MIR"></li>
                     </div>
                 </ul>
             </div>
